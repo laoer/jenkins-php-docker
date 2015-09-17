@@ -33,7 +33,7 @@ RUN cd /tmp; \
   zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/plot.hpi && \
   zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/pmd.hpi && \
   zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/violations.hpi && \
-  zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/xunit.hpi
+  zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/xunit.hpi && \
   zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/docker-build-publish.hpi
 
 # Install php packages.
