@@ -41,7 +41,6 @@ RUN cd /tmp; \
   zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/xunit.hpi && \
   zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/docker-build-publish.hpi && \
   zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/git-client.hpi && \
-  zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/docker-build-publish.hpi && \
   zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/scm-api.hpi && \
   zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/git.hpi && \
   zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/bitbucket.hpi && \
