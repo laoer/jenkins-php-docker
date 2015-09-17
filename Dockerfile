@@ -22,7 +22,11 @@ RUN curl -L https://updates.jenkins-ci.org/latest/checkstyle.hpi -o /tmp/WEB-INF
   curl -L https://updates.jenkins-ci.org/latest/scm-api.hpi -o /tmp/WEB-INF/plugins/scm-api.hpi && \
   curl -L https://updates.jenkins-ci.org/latest/git.hpi -o /tmp/WEB-INF/plugins/git.hpi && \
   curl -L https://updates.jenkins-ci.org/latest/bitbucket.hpi -o /tmp/WEB-INF/plugins/bitbucket.hpi && \
-  curl -L https://updates.jenkins-ci.org/latest/publish-over-ssh.hpi -o /tmp/WEB-INF/plugins/publish-over-ssh.hpi
+  curl -L https://updates.jenkins-ci.org/latest/publish-over-ssh.hpi -o /tmp/WEB-INF/plugins/publish-over-ssh.hpi && \
+  curl -L https://updates.jenkins-ci.org/latest/greenballs.hpi -o /tmp/WEB-INF/plugins/greenballs.hpi && \
+  curl -L https://updates.jenkins-ci.org/latest/htmlpublisher.hpi -o /tmp/WEB-INF/plugins/htmlpublisher.hpi && \
+  curl -L https://updates.jenkins-ci.org/latest/workflow-aggregator.hpi -o /tmp/WEB-INF/plugins/workflow-aggregator.hpi && \
+  curl -L https://updates.jenkins-ci.org/latest/ansicolor.hpi -o /tmp/WEB-INF/plugins/ansicolor.hpi
 
 # Install Docker plugin for docker deploy.
 RUN curl -L https://updates.jenkins-ci.org/latest/docker-build-publish.hpi -o /tmp/WEB-INF/plugins/docker-build-publish.hpi
@@ -44,7 +48,11 @@ RUN cd /tmp; \
   zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/scm-api.hpi && \
   zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/git.hpi && \
   zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/bitbucket.hpi && \
-  zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/publish-over-ssh.hpi
+  zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/publish-over-ssh.hpi && \
+  zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/greenballs.hpi && \
+  zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/htmlpublisher.hpi && \
+  zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/workflow-aggregator.hpi && \
+  zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/ansicolor.hpi
 
 # Install php packages.
 RUN apt-get update
