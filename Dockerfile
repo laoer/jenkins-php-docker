@@ -1,6 +1,6 @@
 # Official images are cool.
 FROM jenkins
-MAINTAINER Ignacio Tolstoy <arkantos798@gmail.com>
+MAINTAINER Alex Vo <tuanmaster2012@gmail.com>
 
 # Jenkins is using jenkins user, we need root to install things.
 USER root
