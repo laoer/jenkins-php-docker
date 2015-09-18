@@ -77,7 +77,8 @@ RUN set -x \
      && make install \
      && make clean
 
-COPY ext-xdebug.ini :/etc/php5/mods-available/
+COPY ext-xdebug.ini /etc/php5/mods-available/
+COPY ext-xdebug.ini /etc/php5/cli/
 
 
 # Install docker
