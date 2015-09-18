@@ -59,9 +59,25 @@ RUN apt-get update
 RUN apt-get -y -f install php5-cli php5-dev php5-curl curl php-pear ant
 
 # Install php xdebug extension for code coverage
-RUN pecl install xdebug &&\
-    echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20121212/xdebug.so" > /usr/local/etc/php/conf.d/ext-xdebug.ini
+# Setup the Xdebug version to install
+ENV XDEBUG_VERSION 2.2.7
+ENV XDEBUG_MD5 71a6b75885207e79762e1e7aaf5c3993
 
+# Install Xdebug
+RUN set -x \
+	&& curl -SL "http://www.xdebug.org/files/xdebug-$XDEBUG_VERSION.tgz" -o xdebug.tgz \
+	&& echo $XDEBUG_MD5 xdebug.tgz | md5sum -c - \
+	&& mkdir -p /usr/src/xdebug \
+	&& tar -xf xdebug.tgz -C /usr/src/xdebug --strip-components=1 \
+	&& rm xdebug.* \
+	&& cd /usr/src/xdebug \
+	&& phpize \
+	&& ./configure \
+	&& make -j"$(nproc)" \
+	&& make install \
+	&& make clean
+
+COPY ext-xdebug.ini /usr/local/etc/php/conf.d/
 
 # Install docker
 RUN apt-get -y -f install docker.io
