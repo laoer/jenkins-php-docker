@@ -5,6 +5,8 @@ MAINTAINER Alex Vo <tuanmaster2012@gmail.com>
 # Jenkins is using jenkins user, we need root to install things.
 USER root
 
+RUN  echo "    IdentityFile ~/.ssh/id_rsa" >> /etc/ssh/ssh_config
+
 RUN mkdir -p /tmp/WEB-INF/plugins
 
 # Install required jenkins plugins.
